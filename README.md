@@ -1,17 +1,14 @@
-# RAVE for DRAC
+# RAVE // DRAC
 Resources for training RAVE models on DRAC infrastructure
 
-## Templates
+## Template Scripts
 Includes generic templates for writing various scripts
 
-## Train
-Includes scripts used for model training. Removed from this folder if unsuccessful to ensure saliency. Documentation of results.
+## Training
+Training diary including documentation on training process
 
 ## Test
-Includes different test folders that document intention, results, conclusions, and scripts that were used.
+Documentation of different tests and their conclusions.
 
-## Export
-Includes scripts used for exporting models.
-
-## Other
-Includes other useful scripts, not directly related to RAVE.
+## Notes
+References, resources, tips, theory, ...
