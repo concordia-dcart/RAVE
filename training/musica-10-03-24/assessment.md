@@ -6,7 +6,9 @@
 **Flags:** no unusual flags
 ## Status
 
-training
+Done training- everything seems fine. (5M + 2M steps)
+Exported for nromal streaming and using MSPrior.
+Seems to have 8 latent dimensions.
 
 ## Issues
 

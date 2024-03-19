@@ -1,5 +1,9 @@
 # [MsPrior](https://github.com/caillonantoine/msprior)
 
+## Attention
+
+MsPrior is an experimental architecture still in development. A similar, but more stable and simple prior-based export method is available for v1 and v2>=2.3 configs, documented [here](prior.md).
+
 ## What is it?
 
 RAVE's architecture, when in feed forward (playing) mode, is essentially made of a (variational) encoder and a decoder. The encoder provides inputs, which are values along the axes of the trained latent space, tot he decoder to reconstruct as sound. [More info on VAEs](https://www.youtube.com/watch?v=5bA6gwo36Cw)

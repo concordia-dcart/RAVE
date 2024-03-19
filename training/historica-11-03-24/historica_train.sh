@@ -27,7 +27,8 @@ module load python/3.10
 module load scipy-stack
 virtualenv --no-download $SLURM_TMPDIR/env
 pip install --no-index --upgrade pip
-pip install --no-index -r "$REQS"
+#pip install --no-index -r "$REQS"
+pip install --no-index acids-rave==2.3.1 #we were provided a wheel!
 
 #-------------------------------------------prepare training data
 
@@ -43,8 +44,8 @@ cp -rv "$PROC" "${SLURM_TMPDIR}/" #copy preporocessed data to compute node's tem
 #-------------------------------------------train
 if [ "$SLURM_ARRAY_TASK_ID" -eq 1 ] || [ "$SLURM_ARRAY_TASK_ID" == "1" ]; then #Check if first job in job array
 
-cd "$RUN"
-tensorboard --logdir "$RUNS" --bind_all & #enables tensorboard in the background for live monitoring
+cd "$RUNS"
+tensorboard --logdir . --bind_all & #enables tensorboard in the background for live monitoring
 
 rave train --config v2 --db_path "$TMPDIR" --name "$NAME" --max_steps $MAXSTEPS --workers 8 --val_every $CKPTFREQ --override PHASE_1_DURATION=$PHASEONE
 
@@ -58,8 +59,8 @@ fi
 echo "path to checkpoint"
 echo $CKPT
 
-cd "$RUN"
-tensorboard --logdir "$RUNS" --bind_all & #enables tensorboard in the background for live monitoring
+cd "$RUNS"
+tensorboard --logdir . --bind_all & #enables tensorboard in the background for live monitoring
 
 rave train --config v2 --db_path "$TMPDIR" --name "$NAME" --max_steps $MAXSTEPS --workers 8 --ckpt "$CKPT" --val_every $CKPTFREQ --override PHASE_1_DURATION=$PHASEONE
 

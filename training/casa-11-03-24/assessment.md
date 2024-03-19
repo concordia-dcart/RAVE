@@ -6,7 +6,8 @@
 **Flags:** no unusual flags
 ## Status
 
-training
+training, failed.
+Attempt 2 currently postponed while resolving other tests with same issue.
 
 ## Issues
 

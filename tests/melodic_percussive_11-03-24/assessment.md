@@ -1,7 +1,7 @@
 ## Info
 
 **Infrastructure:** DRAC - Beluga
-**Dataset:** percussive (mainly early 200's hip hop) and melodic (DSBM) (separate training)
+**Dataset:** percussive (mainly early 2000's hip hop) and melodic (DSBM) (separate training)
 **Template(s):** vanilla_v2
 **Flags:** no unusual flags
 
@@ -26,6 +26,12 @@ state what has been learned from test
 ## Issues
 
 slowed down by issues regarding training multiple models at once
+First attempt: there seems to be an issue with loading the python environment. Froze before training.
+
+Second attempt: Trying with newly provided wheel for rave v2.3.1, avoiding the need of a requirements list.
+/home/tpeschl/.local/lib/python3.10/site-packages/torch/nn/init.py:405: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+  is this an error related to wrong dataset path?
 
 ## Solutions
 
